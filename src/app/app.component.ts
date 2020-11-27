@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Output,EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: [ './app.component.css' ]
 })
-export class AppComponent {
-  title = 'app';
+export class AppComponent  {
+  //passing values from parent to child
+  master : String="Type here to send and get data from Parent to Child";
+  
+  //Getting value from child
+  childToParent(name){
+    this.master=name;
+  }
+
 }
